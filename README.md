@@ -36,7 +36,7 @@ root                    (project root folder)
 ---
 * Kjellden Knutzen Kjelldenknutzen@gmail.com 
 
-* (name and email)
+* James Rainey raineyatsea@gmail.com
 
 * (name and email)
 
