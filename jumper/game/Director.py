@@ -21,12 +21,11 @@ class director():
         Args self(director): an instance of Director
         """
         self.jumper.get_jumper_word()
-        print(self.jumper.jumper_word)
+        #print(self.jumper.jumper_word)
         print(*self.jumper.hidden_word, sep = " ")
         self.jumper.jumper_Image(self.jumper.jumper_health)
-        print(*self.player.guesses, sep= " ")
+        self.jumper.jumper_health -= 1
         
-
         while self.keep_Playing  == True:
             self.get_inputs()
             self.do_updates()
@@ -72,6 +71,7 @@ class director():
         """
         print(*self.jumper.hidden_word, sep=" ")
         self.jumper.jumper_Image(self.jumper.jumper_health)
+        print("Used letters:")
         print(*self.player.guesses, sep= " ")
         print("")
 
