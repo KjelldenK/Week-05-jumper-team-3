@@ -28,7 +28,7 @@ class jumper():
         args (jumper): an instence of jumper
         """
 
-        with open("C:\\Users\\Kjellden knutzen\\Desktop\\Week-05-jumper-team-3\\jumper\\words.txt", "r") as ranwords:
+        with open("words.txt", "r") as ranwords:
             read_line = ranwords.readlines()
             self.jumper_word = read_line[random.randint(1,10000)].strip("\n")
         #self.jumper_word = "sandwich"
