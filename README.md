@@ -36,11 +36,7 @@ root                    (project root folder)
 ---
 * Kjellden Knutzen Kjelldenknutzen@gmail.com 
 
-<<<<<<< HEAD
 * (marco A. sarango sar21005@byui.edu  )
-=======
-* James Rainey raineyatsea@gmail.com
->>>>>>> 8c3fc3f51af2353deb12239634274a2c35969448
 
 * James Rainey raineyatsea@gmail.com
 
