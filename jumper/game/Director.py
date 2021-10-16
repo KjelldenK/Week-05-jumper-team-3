@@ -20,7 +20,10 @@ class director():
 
         Args self(director): an instance of Director
         """
-        pass
+        while self.keep_Playing:
+            self.get_inputs()
+            self.do_updates()
+            self.do_outputs()
 
 
     def get_inputs(self):
@@ -30,7 +33,12 @@ class director():
 
         args: (Director): An instance of Director.
         """
-        pass
+        guess_letter = self.player.player_input()
+        self.controller.write_letter(guess_letter)
+        
+        
+        
+
 
     def do_updates(self):
         """
@@ -40,7 +48,13 @@ class director():
 
         args: (Director) an instance of Director.
         """
-        pass
+        if self.player.player_input() == True:
+            answer = self.jumper.get_jumper_word()
+        else:
+            answer = self.jumper.get_hidden_word()
+
+        return answer
+            
 
     def do_outputs(self):
         """
@@ -50,4 +64,8 @@ class director():
 
         args: (Director): An instacne of Direcyor.
         """
-        pass
+        letter = self.player.player_input()
+        self.controller.write_letter(letter)
+
+        
+
