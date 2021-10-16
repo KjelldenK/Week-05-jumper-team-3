@@ -4,10 +4,20 @@ class jumper():
         self.jumper_word = str
         self.jumper_health = 5
         self.hidden_word = []
-
-    def jumper_Image(self, health):
-        
-        pass
+        self.words_list = "words.txt"
+    def jumper_Image(self,health):
+        if health == 5:
+            print("you still have 5 hp")
+        elif health == 4:
+            print("you still have 4 hp")
+        elif health == 3:
+            print("you still have 3 hp")
+        elif health == 2:
+            print("you still have 2 hp")
+        elif health == 1:
+            print("you only have 1 hp")
+        elif health == 0:
+            print("you are dead")
 
 
     def get_jumper_word(self):
@@ -18,10 +28,11 @@ class jumper():
 
         args (jumper): an instence of jumper
         """
-        with open("words.txt", "r") as ranwords:
-            read_line = ranwords.readlines()
-            self.jumper_word = read_line[random.randint(1,10000)].strip("\n")
-        
+
+      #  with open(self.words_list, "r") as ranwords:
+       #     read_line = ranwords.readlines()
+        #    self.jumper_word = read_line[random.randint(1,10000)].strip("\n")
+        self.jumper_word = "sandwich"
         i = 0
         while i < int(len(self.jumper_word)):
             self.hidden_word.append("_")
@@ -34,7 +45,7 @@ class jumper():
 
         args (jumper, letter) an instance of jumper and a letter from the user.
         """
-        
+
         j = 0
         changes = 0
         while j < len(self.jumper_word):

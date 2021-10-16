@@ -14,13 +14,21 @@ class director():
         self.controller = controller()
         self.keep_Playing = True
 
-    def Play_game(self):
+    def start_game(self):
         """
         Starts the game loop to control and goes through the sequence of play.
 
         Args self(director): an instance of Director
         """
-        while self.keep_Playing:
+        self.jumper.get_jumper_word()
+        print(self.jumper.jumper_word)
+        print(*self.jumper.hidden_word, sep = " ")
+        self.jumper.jumper_Image(self.jumper.jumper_health)
+        print(*self.player.guesses, sep= " ")
+        print("")
+
+        while self.keep_Playing  == True:
+            print(self.jumper.jumper_health)
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
@@ -33,9 +41,12 @@ class director():
 
         args: (Director): An instance of Director.
         """
-        guess_letter = self.player.player_input()
-        self.controller.write_letter(guess_letter)
-        
+        letter_clear =  False
+        while letter_clear == False:
+            letter = self.player.player_input()
+            letter_clear = self.controller.check_letter(letter,self.player.guesses)
+        self.player.player_letter = letter
+        self.player.guesses.append(letter)
         
         
 
@@ -48,12 +59,8 @@ class director():
 
         args: (Director) an instance of Director.
         """
-        if self.player.player_input() == True:
-            answer = self.jumper.get_jumper_word()
-        else:
-            answer = self.jumper.get_hidden_word()
-
-        return answer
+    
+        self.jumper.add_letter(self.player.player_letter)
             
 
     def do_outputs(self):
@@ -64,8 +71,22 @@ class director():
 
         args: (Director): An instacne of Direcyor.
         """
-        letter = self.player.player_input()
-        self.controller.write_letter(letter)
+        print(*self.jumper.hidden_word)
+        self.jumper.jumper_Image(self.jumper.jumper_health)
+        print(*self.player.guesses, sep= " ")
+        print("")
+
+
+        if self.jumper.jumper_health == 0:
+            print(f"\nYou have ran out of lives the word was {self.jumper.jumper_word}")
+            print("Thanks for playing")
+            self.keep_Playing = False
+        
+        if "_" not in self.jumper.hidden_word:
+            print("you got the word right!")
+            self.keep_Playing = False
+        
+        pass
 
         
 
