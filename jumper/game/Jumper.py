@@ -4,7 +4,6 @@ class jumper():
         self.jumper_word = str
         self.jumper_health = 5
         self.hidden_word = []
-        self.words_list = "words.txt"
     def jumper_Image(self,health):
         if health == 5:
             print("you still have 5 hp")
@@ -29,10 +28,10 @@ class jumper():
         args (jumper): an instence of jumper
         """
 
-      #  with open(self.words_list, "r") as ranwords:
-       #     read_line = ranwords.readlines()
-        #    self.jumper_word = read_line[random.randint(1,10000)].strip("\n")
-        self.jumper_word = "sandwich"
+        with open("C:\\Users\\Kjellden knutzen\\Desktop\\Week-05-jumper-team-3\\jumper\\words.txt", "r") as ranwords:
+            read_line = ranwords.readlines()
+            self.jumper_word = read_line[random.randint(1,10000)].strip("\n")
+        #self.jumper_word = "sandwich"
         i = 0
         while i < int(len(self.jumper_word)):
             self.hidden_word.append("_")

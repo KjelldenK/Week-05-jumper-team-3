@@ -25,10 +25,9 @@ class director():
         print(*self.jumper.hidden_word, sep = " ")
         self.jumper.jumper_Image(self.jumper.jumper_health)
         print(*self.player.guesses, sep= " ")
-        print("")
+        
 
         while self.keep_Playing  == True:
-            print(self.jumper.jumper_health)
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
@@ -71,7 +70,7 @@ class director():
 
         args: (Director): An instacne of Direcyor.
         """
-        print(*self.jumper.hidden_word)
+        print(*self.jumper.hidden_word, sep=" ")
         self.jumper.jumper_Image(self.jumper.jumper_health)
         print(*self.player.guesses, sep= " ")
         print("")
