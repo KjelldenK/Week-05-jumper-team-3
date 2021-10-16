@@ -1,22 +1,138 @@
 import random
+
+"""
+This class will take care of the jumper information such as the word that is randomly taken from a file
+and will keep track of the health of the player and helps the player input get put into the hidden work is it belongs there.
+"""
 class jumper():
     def __init__(self):
         self.jumper_word = str
-        self.jumper_health = 5
+        self.jumper_health = 6
         self.hidden_word = []
     def jumper_Image(self,health):
-        if health == 5:
-            print("you still have 5 hp")
+
+        """
+        This will print aski art depending on how much hp the player has
+
+        args (jumper, health): an instence of jumper and the health of the player
+        """
+        if health == 6:
+            print("""
+|------|    
+|START!|            o/
+|------|           /|
+|      |           /|
+---|_|---------________
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||
+|| |-| ||   ||
+|| |-| ||   ||
+|| |-| ||   ||             
+""")
+        elif health == 5:
+                print("""
+
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||        //
+|| |-| ||   ||        |
+||_|-|_||___||       /o\       __________________
+            ||~~~~~~~~~~~~~~~~~|5        
+            |                  |4  |Water Level| 
+            |                  |3 
+            |                  |2
+            |                  |1
+             ------------------
+    """)  
         elif health == 4:
-            print("you still have 4 hp")
+                print("""
+         
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||        
+|| |-| ||   ||        //
+|| |-| ||   ||        |       __________________
+|| |-| ||   ||       /o\      |5        
+            |~~~~~~~~~~~~~~~~~|4  |Water Level| 
+            |                 |3 
+            |                 |2
+            |                 |1
+             -----------------
+""")
         elif health == 3:
-            print("you still have 3 hp")
+                print("""
+       
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||       
+|| |-| ||   ||        
+|| |-| ||   ||        //      __________________
+|| |-| ||   ||        |       |5        
+            |        /o\      |4  |Water Level| 
+            |~~~~~~~~~~~~~~~~~|3 
+            |                 |2
+            |                 |1
+             -----------------
+""")
         elif health == 2:
-            print("you still have 2 hp")
+                print("""
+         
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||       
+|| |-| ||   ||        
+|| |-| ||   ||                __________________
+|| |-| ||   ||        //      |5        
+            |         |       |4  |Water Level| 
+            |        /o\      |3 
+            |~~~~~~~~~~~~~~~~~|2
+            |                 |1
+             -----------------
+""")  
         elif health == 1:
-            print("you only have 1 hp")
+                print("""
+       
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||        
+|| |-| ||   ||        
+|| |-| ||   ||                __________________
+|| |-| ||   ||                |5        
+            |      //         |4  |Water Level| 
+            |      |          |3 
+            |     /o\         |2
+            |~~~~~~~~~~~~~~~~~|1
+             -----------------
+""")  
         elif health == 0:
-            print("you are dead")
+                print("""
+      
+---|_|---------_____  
+|| |-| ||   || / 
+|| |-| ||   ||  
+|| |-| ||   ||  
+|| |-| ||   ||        
+|| |-| ||   ||                      
+|| |-| ||   ||                __________________
+|| |-| ||   ||                |5       
+            |                 |4  |Water Level| 
+            |       //        |3 
+            |       |         |2
+            |      /x\        |1
+             -----------------
+""")    
 
 
     def get_jumper_word(self):
